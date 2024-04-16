@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: backgroundColor,
         ),
       ),
-      home: const CalculadoraPage(
+      home:  const CalculadoraPage(
         
       ),
     );

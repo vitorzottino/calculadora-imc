@@ -1,18 +1,17 @@
+import '/constants.dart';
 import 'package:flutter/material.dart';
-
-import '../constants.dart';
 
 class CustomCard extends StatelessWidget {
   final Widget? child;
-
-  const CustomCard({super.key, this.child});
+  final bool active;
+  const CustomCard({super.key, this.child, this.active = false});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(6.0),
       decoration: BoxDecoration(
-        color: inactiveCardColour,
+        color: active ? activeCardColour : inactiveCardColour,
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: child,
