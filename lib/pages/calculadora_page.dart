@@ -17,6 +17,14 @@ class CalculadoraPage extends StatefulWidget {
 class _CalculadoraPageState extends State<CalculadoraPage> {
   Gender? selectedGender;
   int altura = 120;
+  int peso = 80;
+  int idade = 18;
+
+  final int pesoMin = 20;
+  final int pesoMax = 200;
+  final int idadeMin = 10;
+  final int idadeMax = 100;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,17 +82,51 @@ class _CalculadoraPageState extends State<CalculadoraPage> {
               ),
             ),
           ),
-          const Expanded(
+           Expanded(
             child: Row(
               children: [
                 Expanded(
                   child: CustomCard(
-                    child: Contador(),
+                    child: Contador(
+                      label: 'Peso',
+                      value: peso,
+                      onIncrement: () {
+                        if (peso < pesoMax) {
+                          setState(() {
+                            peso++;
+                          });
+                        }
+                      },
+                      onDecrement: () {
+                        if (peso > pesoMin) {
+                          setState(() {
+                            peso++;
+                          });
+                        }
+                      },
+                    ),
                   ),
                 ),
                 Expanded(
                   child: CustomCard(
-                    child: Contador(),
+                    child: Contador(
+                      label: 'Idade',
+                      value: idade,
+                      onIncrement: () {
+                        if (idade < idadeMax) {
+                          setState(() {
+                            idade++;
+                          });
+                        }
+                      },
+                      onDecrement: () {
+                        if (idade > idadeMin) {
+                          setState(() {
+                            idade--;
+                          });
+                        }
+                      },
+                    ),
                   ),
                 ),
               ],
